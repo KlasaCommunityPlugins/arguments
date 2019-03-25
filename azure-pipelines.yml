@@ -23,7 +23,7 @@ jobs:
 
   - template: docs.yml@templates
     parameters:
-      ghRef: 'github.com/KlasaCommunityPlugins/bread-tags'
+      ghRef: 'github.com/KlasaCommunityPlugins/arguments'
       targetBranch: 'docs'
       sync: 'false'
       dependsOn:

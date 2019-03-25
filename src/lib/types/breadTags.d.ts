@@ -22,6 +22,8 @@ declare module 'bread-tags' {
 		public throwErrors?: boolean;
 		private tags: Map<string, TagBuilder>;
 
+		public get(tag: string): TagBuilder | null;
+
 		public static loadTag(tags: TagBuilder | TagBuilder[]): void;
 	}
 

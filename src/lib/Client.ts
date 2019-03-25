@@ -10,21 +10,21 @@ import { OPTIONS } from './util/CONSTANTS';
  * @extends external:KlasaClient
  * @tutorial GettingStarted
  */
-export class TagsClient extends Client {
+export class ArgumentsClient extends Client {
 
 	/**
-	 * @typedef {external:KlasaClientOptions} TagsClientOptions
-	 * @property {TagsOptions} [tags={}]
+	 * @typedef {external:KlasaClientOptions} ArgumentsClientOptions
+	 * @property {ArgumentsOptions} [arguments={}]
 	 */
 
 	/**
-	 * @typedef {Object} TagsOptions
+	 * @typedef {Object} ArgumentsOptions
 	 */
 
 	/**
-	 * Constructs the tags client.
+	 * Constructs the arguments client.
 	 * @since 0.0.1
-	 * @param {TagsClientOptions} options The config to pass to the new client
+	 * @param {ArgumentsClientOptions} options The config to pass to the new client
 	 */
 	constructor(options?: KlasaClientOptions) {
 		super(options);
@@ -33,7 +33,7 @@ export class TagsClient extends Client {
 	}
 
 	static [Client.plugin]() {
-		const typedThis = this as unknown as TagsClient;
+		const typedThis = this as unknown as ArgumentsClient;
 		const coreDirectory = join(__dirname, '..', '/');
 		util.mergeDefault(OPTIONS, typedThis.options);
 
@@ -56,7 +56,7 @@ declare module 'discord.js' {
 	}
 
 	interface ClientOptions {
-		tags: {
+		arguments: {
 		};
 	}
 }

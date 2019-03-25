@@ -1,6 +1,6 @@
 // Copyright (c) 2018-2019 KlasaCommunityPlugins. All rights reserved. MIT license.
 import { Piece, PieceOptions } from 'klasa';
-import { TagsClient as Client } from '../Client';
+import { ArgumentsClient as Client } from '../Client';
 import { TagStore } from './TagsStore';
 
 /**

@@ -1,6 +1,6 @@
 // Copyright (c) 2018-2019 KlasaCommunityPlugins. All rights reserved. MIT license.
 import { Store } from 'klasa';
-import { TagsClient } from '../Client';
+import { ArgumentsClient } from '../Client';
 import { Tag } from './Tag';
 
 /**
@@ -10,9 +10,9 @@ import { Tag } from './Tag';
 export class TagStore extends Store<string, Tag> {
 	/**
 	 * @since 0.0.1
-	 * @param {TagsClient} client The Klasa client
+	 * @param {ArgumentsClient} client The Klasa client
 	 */
-	constructor(client: TagsClient, coreDirectory: string) {
+	constructor(client: ArgumentsClient, coreDirectory: string) {
 		super(client, 'tags', Tag);
 		this.registerCoreDirectory(coreDirectory);
 	}
