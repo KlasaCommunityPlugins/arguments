@@ -1,4 +1,5 @@
 // Copyright (c) 2018-2019 KlasaCommunityPlugins. All rights reserved. MIT license.
+import { Parser, ParserOptions } from 'breadtags';
 import { Client, KlasaClientOptions, util } from 'klasa';
 import { join } from 'path';
 import { TagStore } from './structures/TagsStore';
@@ -41,9 +42,11 @@ export class ArgumentsClient extends Client {
 		 * The cache where tags are stored
 		 * @since 0.0.1
 		 * @type {TagStore}
-		 * @name TagStore#tags
+		 * @name ArgumentsClient#tags
 		 */
 		typedThis.tags = new TagStore(typedThis, coreDirectory);
+
+		typedThis.parser = new Parser(typedThis.options.arguments.parser);
 
 		typedThis.registerStore(typedThis.tags);
 	}
@@ -53,10 +56,12 @@ export class ArgumentsClient extends Client {
 declare module 'discord.js' {
 	interface Client {
 		tags: TagStore;
+		parser: Parser;
 	}
 
 	interface ClientOptions {
 		arguments: {
+			parser: ParserOptions;
 		};
 	}
 }

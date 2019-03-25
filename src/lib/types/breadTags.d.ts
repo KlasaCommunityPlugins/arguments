@@ -1,5 +1,6 @@
-declare module 'bread-tags' {
-	export class TagBuilder {
+// Copyright (c) 2018-2019 KlasaCommunityPlugins. All rights reserved. MIT license.
+declare module 'breadtags' {
+	export class Builder {
 		public constructor();
 		public type: string[];
 		public description: string | null;
@@ -16,21 +17,21 @@ declare module 'bread-tags' {
 		public onUse(input: any, data: processsData): string;
 	}
 
-	export class TagsParser {
+	export class Parser {
 		public constructor(options?: ParserOptions);
 		public errorLogging?: boolean;
 		public throwErrors?: boolean;
-		private tags: Map<string, TagBuilder>;
+		private tags: Map<string, Builder>;
 
-		public get(tag: string): TagBuilder | null;
+		public get(tag: string): Builder | null;
 
-		public static loadTag(tags: TagBuilder | TagBuilder[]): void;
+		public static loadTag(tags: Builder | Builder[]): void;
 	}
 
 	export type ParserOptions = {
-		errorLogging: boolean;
-		throwErrors: boolean;
-		disabledTags: string[];
+		errorLogging?: boolean;
+		throwErrors?: boolean;
+		disabledTags?: string[];
 	};
 
 	export type processParams = {
