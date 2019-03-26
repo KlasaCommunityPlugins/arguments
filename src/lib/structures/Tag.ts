@@ -15,7 +15,7 @@ export class Tag extends Piece {
 	/**
 	 * @since 0.0.1
 	 * @param {Client} client The Klasa client
-	 * @param {TagStore} store The TAg Store
+	 * @param {TagStore} store The Tag Store
 	 * @param {string} file The path from the pieces folder to the event file
 	 * @param {boolean} core If the piece is in the core directory or not
 	 * @param {external:PieceOptions} [options={}] Optional Tag settings
