@@ -20,9 +20,10 @@ export class TagStore extends Store<string, Tag> {
 
 	async loadAll(): Promise<number> {
 		const load = await super.loadAll();
-		for (const build of this.values()) {
-			const b = build.run() as Builder;
-			Parser.loadTag(b);
+		for await (const builder of this.values()) {
+			const built = await builder.run() as Builder;
+			if (!(built instanceof Builder)) throw new Error(`${builder.type}::${builder.name}: Run method did not return a Builder class!`);
+			Parser.loadTag(built);
 		}
 		return load;
 	}

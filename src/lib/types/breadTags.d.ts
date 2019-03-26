@@ -41,5 +41,6 @@ declare module 'breadtags' {
 
 	export type processsData = {
 		[K: string]: any;
+		args: any[];
 	};
 }
