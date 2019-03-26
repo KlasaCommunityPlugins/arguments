@@ -13,8 +13,8 @@ declare module 'breadtags' {
 		public setDescription(description: string): this;
 		public hasAction(action?: boolean): this;
 		public requiredArgs(num: number): this;
-		public setProcess(fn: ((data: processParams) => any), thisArg: any): this;
-		public onUse(input: any, data: processsData): string;
+		public setProcess(fn: ((data: processParams) => any), thisArg?: any): this;
+		public onUse(input: any, data: processsData): Promise<string> | string;
 	}
 
 	export class Parser {
@@ -24,6 +24,8 @@ declare module 'breadtags' {
 		private tags: Map<string, Builder>;
 
 		public get(tag: string): Builder | null;
+		public parse(input: string, data: processsData | null, cb: ((input: string) => string)): Promise<string>;
+		private replaceArg(string: string, args: string[]): string;
 
 		public static loadTag(tags: Builder | Builder[]): void;
 	}

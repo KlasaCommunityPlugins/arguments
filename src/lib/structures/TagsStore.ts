@@ -23,6 +23,7 @@ export class TagStore extends Store<string, Tag> {
 		for await (const builder of this.values()) {
 			const built = await builder.run() as Builder;
 			if (!(built instanceof Builder)) throw new Error(`${builder.type}::${builder.name}: Run method did not return a Builder class!`);
+			if ((!built.type) || (built.type.length === 0)) built.setType(builder.name);
 			Parser.loadTag(built);
 		}
 		return load;

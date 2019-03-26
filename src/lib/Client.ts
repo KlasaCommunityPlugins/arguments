@@ -46,6 +46,9 @@ export class ArgumentsClient extends Client {
 		 */
 		typedThis.tags = new TagStore(typedThis, coreDirectory);
 
+		// @ts-ignore
+		typedThis.tags.registerCoreDirectory(coreDirectory);
+
 		typedThis.parser = new Parser(typedThis.options.arguments.parser);
 
 		typedThis.registerStore(typedThis.tags);

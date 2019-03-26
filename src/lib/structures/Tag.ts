@@ -12,6 +12,8 @@ import { TagStore } from './TagsStore';
  */
 export class Tag extends Piece {
 
+	Builder: typeof Builder = Builder;
+
 	/**
 	 * @since 0.0.1
 	 * @param {Client} client The Klasa client

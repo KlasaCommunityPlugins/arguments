@@ -1,8 +1,11 @@
 // Copyright (c) 2018-2019 KlasaCommunityPlugins. All rights reserved. MIT license.
 import { Client as KlasaClient } from 'klasa';
+import { version } from '../package.json';
 import { ArgumentsClient as Client } from './lib/Client';
+import { Tag } from './lib/structures/Tag';
+import { TagStore } from './lib/structures/TagsStore';
 
-export { Client };
+export { Client, version, TagStore, Tag };
 // @ts-ignore
 exports[KlasaClient.plugin] = Client[KlasaClient.plugin];
 
