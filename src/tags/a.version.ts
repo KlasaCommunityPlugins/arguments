@@ -7,10 +7,6 @@ export default class ArgumentsVersion extends Tag {
   }
 
   run() {
-		return this.Builder
-			.setDescription('Displays the version of the arguments plugin')
-			.hasAction(false)
-			.requiredArgs(0)
-			.setProcess((_) => version);
+		return version;
 	}
 }
