@@ -7,7 +7,7 @@ export default class ArgumentsVersion extends Tag {
   }
 
   run() {
-		return new this.Builder()
+		return this.Builder
 			.setDescription('Displays the version of the arguments plugin')
 			.hasAction(false)
 			.requiredArgs(0)

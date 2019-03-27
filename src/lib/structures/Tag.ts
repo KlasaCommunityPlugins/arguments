@@ -12,7 +12,7 @@ import { TagStore } from './TagsStore';
  */
 export class Tag extends Piece {
 
-	Builder: typeof Builder = Builder;
+	Builder: Builder = new Builder();
 
 	/**
 	 * @since 0.0.1
