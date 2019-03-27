@@ -7,13 +7,13 @@
 		"lib": ["esnext"],
 		"module": "commonjs",
 		"moduleResolution": "node",
-		"noEmitOnError": true,
+		"noEmitOnError": false,
 		"noImplicitAny": true,
 		"noImplicitReturns": true,
 		"noImplicitThis": true,
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
-		"outDir": "./dist",
+		"outDir": "./dist/",
 		"pretty": true,
 		"removeComments": false,
 		"resolveJsonModule": true,
@@ -30,6 +30,6 @@
 		]
 	},
 	"include": [
-		"src/**/*"
+		"./src/**/*"
 	]
 }
