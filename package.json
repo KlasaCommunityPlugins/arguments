@@ -21,7 +21,6 @@
     "url": "git+https://github.com/KlasaCommunityPlugins/arguments.git"
   },
   "scripts": {
-    "prepare": "gulp build",
     "test:lint": "yarn tslint 'src/*.ts' && yarn eslint --config .eslintrcmd.json --ext md guides && yarn markdownlint guides README.md",
     "build": "yarn tsc",
     "docs": "yarn build && yarn dg --source dist --custom guides/.docconfig.json --output dist/docs.json --logging"
@@ -38,12 +37,8 @@
     "eslint": "^5.3.0",
     "eslint-config-klasa": "github:dirigeants/klasa-lint",
     "eslint-plugin-markdown": "^1.0.0-beta.6",
-    "fs-nextra": "^0.4.5",
-    "gulp": "^4.0.0",
-    "gulp-typescript": "^5.0.1",
     "klasa": "github:dirigeants/klasa#master",
     "markdownlint-cli": "^0.14.0",
-    "merge2": "^1.2.3",
     "tslint": "^5.14.0",
     "typescript": "^3.3.3333"
   },
