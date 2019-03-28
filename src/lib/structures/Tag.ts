@@ -1,5 +1,4 @@
 // Copyright (c) 2018-2019 KlasaCommunityPlugins. All rights reserved. MIT license.
-import { Builder } from 'breadtags';
 import { Piece } from 'klasa';
 import { ArgumentsClient as Client, TagOptions } from '../Client';
 import { TagStore } from './TagsStore';
@@ -40,15 +39,6 @@ export class Tag extends Piece {
 	run(ctx: ArgumentsProcesssData): string | void;
 	run(): void {
 		throw new Error(`${this.type}::${this.name}: Run method was not overwritten!`);
-	}
-
-	build(): Builder {
-		return new Builder()
-			.setDescription(this.description)
-			.setType(this.tagType)
-			.hasAction(this.action)
-			.requiredArgs(this.args)
-			.setProcess(this.run);
 	}
 
 }

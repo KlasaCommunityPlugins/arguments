@@ -1,5 +1,4 @@
 // Copyright (c) 2018-2019 KlasaCommunityPlugins. All rights reserved. MIT license.
-import { ParserOptions } from 'breadtags';
 import { Client, KlasaClientOptions, PieceOptions, util } from 'klasa';
 import { join } from 'path';
 import { TagStore } from './structures/TagsStore';
@@ -90,7 +89,7 @@ declare module 'discord.js' {
 
 	interface ClientOptions {
 		arguments: {
-			parser: ParserOptions;
+			parser: any;
 		};
 	}
 }
