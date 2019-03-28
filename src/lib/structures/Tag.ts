@@ -16,6 +16,8 @@ export class Tag extends Piece {
 	args: number;
 	action: boolean;
 
+	cleanTagType: string;
+
 	/**
 	 * @since 0.0.1
 	 * @param {Client} client The Klasa client
@@ -31,6 +33,8 @@ export class Tag extends Piece {
 		this.description = options.description || '';
 		this.args = options.args || 0;
 		this.action = options.action || false;
+
+		this.cleanTagType = this.tagType.replace(/[.]/gi, '\\$&');
 	}
 
 	run(ctx: ArgumentsProcesssData): string | void;

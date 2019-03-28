@@ -1,8 +1,10 @@
 // Copyright (c) 2018-2019 KlasaCommunityPlugins. All rights reserved. MIT license.
-import { Parser, ParserOptions } from 'breadtags';
+import { ParserOptions } from 'breadtags';
 import { Client, KlasaClientOptions, PieceOptions, util } from 'klasa';
 import { join } from 'path';
 import { TagStore } from './structures/TagsStore';
+import { Parser } from './util/Parser';
+import { ParserFormer } from './util/ParserFormer';
 
 import { OPTIONS } from './util/CONSTANTS';
 
@@ -62,9 +64,11 @@ export class ArgumentsClient extends Client {
 		// @ts-ignore
 		typedThis.tags.registerCoreDirectory(coreDirectory);
 
-		typedThis.parser = new Parser(typedThis.options.arguments.parser);
-
 		typedThis.registerStore(typedThis.tags);
+
+		typedThis.parser = {
+			former: new ParserFormer(),
+		};
 	}
 
 }
@@ -78,7 +82,10 @@ declare module 'klasa' {
 declare module 'discord.js' {
 	interface Client {
 		tags: TagStore;
-		parser: Parser;
+		parser: {
+			former: ParserFormer;
+			parser: Parser;
+		} | { former: ParserFormer };
 	}
 
 	interface ClientOptions {

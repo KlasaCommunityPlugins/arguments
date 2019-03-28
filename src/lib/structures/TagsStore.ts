@@ -1,8 +1,7 @@
 // Copyright (c) 2018-2019 KlasaCommunityPlugins. All rights reserved. MIT license.
-import { Builder, Parser } from 'breadtags';
 import { Store } from 'klasa';
 import { ArgumentsClient } from '../Client';
-import { Tag } from './Tag';
+import { ArgumentsProcesssData, Tag } from './Tag';
 
 /**
  * Stores all the Tags that are part of the plugin
@@ -21,9 +20,15 @@ export class TagStore extends Store<string, Tag> {
 	async loadAll(): Promise<number> {
 		const load = await super.loadAll();
 		for await (const builder of this.values()) {
-			const built = await builder.build() as Builder;
-			Parser.loadTag(built);
+			const former = this.client.parser.former;
+			former.cleanTypes.push(builder.cleanTagType);
+			former.types.push(builder.tagType);
+			former.parsers.set(builder.tagType, (builder.run as ((ctx: ArgumentsProcesssData) => string)));
 		}
+		this.client.parser = {
+			former: this.client.parser.former,
+			parser: this.client.parser.former.formParser(),
+		};
 		return load;
 	}
 }
