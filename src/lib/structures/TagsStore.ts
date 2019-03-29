@@ -22,9 +22,10 @@ export class TagStore extends Store<string, Tag> {
 		for await (const builder of this.values()) {
 			const former = this.client.parser.former;
 			former.addParser({
-				cleanTag: builder.cleanTagType,
+				cleanTypeTag: builder.cleanTagType,
 				parser: (builder.run as ((ctx: ArgumentsProcesssData) => string)),
-				tag: builder.tagType,
+				tag: builder,
+				typeTag: builder.tagType,
 			});
 		}
 		this.client.parser = {

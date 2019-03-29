@@ -11,11 +11,11 @@ export class Parser {
   }
 
   fetchTags() {
-    return [...this.tags.values()].map((i) => i.tag);
+    return [...this.tags.values()].map((i) => i.typeTag);
   }
 
   fetchCleanTags() {
-    return [...this.tags.values()].map((i) => i.cleanTag);
+    return [...this.tags.values()].map((i) => i.cleanTypeTag);
   }
 
   formRegex() {
