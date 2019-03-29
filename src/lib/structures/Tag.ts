@@ -1,7 +1,10 @@
 // Copyright (c) 2018-2019 KlasaCommunityPlugins. All rights reserved. MIT license.
+import { Collection } from 'discord.js';
 import { Piece } from 'klasa';
 import { ArgumentsClient as Client, TagOptions } from '../Client';
 import { TagStore } from './TagsStore';
+
+const variables: Collection<string, any> = new Collection();
 
 /**
  * Base class for all Bread Tags Builder. See {@tutorial CreatingTags} for more information how to use this class
@@ -16,6 +19,8 @@ export class Tag extends Piece {
 	action: boolean;
 
 	cleanTagType: string;
+
+	private variables: Collection<string, any> = variables;
 
 	/**
 	 * @since 0.0.1
@@ -39,6 +44,18 @@ export class Tag extends Piece {
 	run(ctx: ArgumentsProcesssData): string | void;
 	run(): void {
 		throw new Error(`${this.type}::${this.name}: Run method was not overwritten!`);
+	}
+
+	addVariable(K: string, V: any): Collection<string, any> {
+		return this.variables.set(K, V);
+	}
+
+	getVariable(K: string): any {
+		return this.variables.get(K);
+	}
+
+	fetchVariables(): Collection<string, any> {
+		return this.variables;
 	}
 
 }
