@@ -18,7 +18,7 @@ jobs:
         displayName: 'Install Node.js'
       - script: yarn
         displayName: 'Install Dependencies'
-      - script: 'yarn build'
+      - script: 'yarn test:build'
         displayName: 'Test Build'
 
   - template: docs.yml@templates

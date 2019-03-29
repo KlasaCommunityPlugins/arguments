@@ -1,5 +1,5 @@
 // Copyright (c) 2018-2019 KlasaCommunityPlugins. All rights reserved. MIT license.
-import { Client, Tag, TagStore, version } from '../index';
+import { Client, Tag, TagStore, VERSION } from '../index';
 
 export default class ArgumentsVersion extends Tag {
   constructor(client: Client, store: TagStore, file: string[], directory: string) {
@@ -10,6 +10,6 @@ export default class ArgumentsVersion extends Tag {
   }
 
   run() {
-		return version;
+		return VERSION;
 	}
 }

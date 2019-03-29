@@ -22,7 +22,7 @@
   },
   "scripts": {
     "test:lint": "yarn tslint 'src/*.ts' && yarn eslint --config .eslintrcmd.json --ext md guides && yarn markdownlint guides README.md",
-    "build": "yarn tsc",
+    "test:build": "yarn tsc",
     "docs": "yarn build && yarn dg --source dist --custom guides/.docconfig.json --output dist/docs.json --logging"
   },
   "peerDependencies": {
@@ -49,8 +49,5 @@
     "dist/",
     "README.md",
     "LICENSE"
-  ],
-  "dependencies": {
-    "breadtags": "Soumil07/bread-tags"
-  }
+  ]
 }

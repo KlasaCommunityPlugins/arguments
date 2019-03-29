@@ -4,18 +4,22 @@ import { ArgumentsProcesssData } from '../structures/Tag';
 import { Parser, ParserOptions } from './Parser';
 
 export class ParserFormer {
-  types: string[] = [];
-  cleanTypes: string[] = [];
-
   parsers: Collection<string, ParserEntry> = new Collection();
+
+  addParser(entry: ParserEntry) {
+    return this.parsers.set(entry.tag, entry);
+  }
 
   formParser(options: ParserOptions = {}): Parser {
     return new Parser({
-      cleanTypes: this.cleanTypes,
-      types: this.types,
+      tags: this.parsers,
       ...options,
     });
   }
 }
 
-export type ParserEntry = (ctx: ArgumentsProcesssData) => string;
+export type ParserEntry = {
+  tag: string;
+  cleanTag: string;
+  parser(ctx: ArgumentsProcesssData): string;
+};

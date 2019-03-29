@@ -21,9 +21,11 @@ export class TagStore extends Store<string, Tag> {
 		const load = await super.loadAll();
 		for await (const builder of this.values()) {
 			const former = this.client.parser.former;
-			former.cleanTypes.push(builder.cleanTagType);
-			former.types.push(builder.tagType);
-			former.parsers.set(builder.tagType, (builder.run as ((ctx: ArgumentsProcesssData) => string)));
+			former.addParser({
+				cleanTag: builder.cleanTagType,
+				parser: (builder.run as ((ctx: ArgumentsProcesssData) => string)),
+				tag: builder.tagType,
+			});
 		}
 		this.client.parser = {
 			former: this.client.parser.former,
