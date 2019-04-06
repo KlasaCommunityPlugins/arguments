@@ -1,5 +1,6 @@
 const { emptyDir } = require('fs-nextra');
 const { readFileSync, writeFileSync } = require('fs');
+const { sync } = require('rimraf');
 const { promisify } = require('util');
 const { exec } = require('child_process');
 const { resolve } = require('path');
@@ -34,8 +35,8 @@ const packageContent = ORIGINAL_PACKAGE_CONTENT
 writeFileSync(TSCONFIG_FILE, tscContent);
 writeFileSync(PACKAGE_FILE, packageContent);
 
-emptyDir(KLASA_DIR);
-emptyDir(DJS_DIR);
+sync(KLASA_DIR);
+sync(DJS_DIR);
 
 pExec(`npx tsc --project "${resolve(__dirname)}"`)
   .then(() => writeFileSync(TSCONFIG_FILE, original_tscContent));

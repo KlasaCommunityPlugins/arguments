@@ -1740,7 +1740,7 @@ fs-minipass@^1.2.5:
   dependencies:
     minipass "^2.2.1"
 
-fs-nextra@^0.4.3, fs-nextra@^0.4.5:
+fs-nextra@^0.4.5:
   version "0.4.5"
   resolved "https://registry.yarnpkg.com/fs-nextra/-/fs-nextra-0.4.5.tgz#0f44a00dd6c0547adaf59ce875e59941d0c70664"
   integrity sha512-oY2o6j0izYzJWp2sow21SekkR3qeMZqHV5ZfNFvfKimFU7piw1/AWwiwbcWjuSfwrfCmHyHymWZOyNbKOzew5g==
@@ -2502,12 +2502,6 @@ kind-of@^6.0.0, kind-of@^6.0.2:
   version "6.0.2"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-6.0.2.tgz#01146b36a6218e64e58f3a8d66de5d7fc6f6d051"
   integrity sha512-s5kLOcnH0XqDO+FvuaLX8DDjZ18CGFk7VygH40QoKPUQhW4e2rvM0rwUq0t8IQDOwYSeLK01U90OjzBTme2QqA==
-
-"klasa@github:dirigeants/klasa#master":
-  version "0.5.0-dev"
-  resolved "https://codeload.github.com/dirigeants/klasa/tar.gz/782c804d48b751865f455804f467a86f059a2d3b"
-  dependencies:
-    fs-nextra "^0.4.3"
 
 klaw@~2.0.0:
   version "2.0.0"
