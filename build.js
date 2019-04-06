@@ -3,7 +3,6 @@ const { readFileSync, writeFileSync } = require('fs');
 const { promisify } = require('util');
 const { exec } = require('child_process');
 const { resolve } = require('path');
-const rimraf = require('rimraf');
 
 const pExec = promisify(exec);
 
