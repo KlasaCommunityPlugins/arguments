@@ -38,5 +38,5 @@ writeFileSync(PACKAGE_FILE, packageContent);
 rimraf.sync(KLASA_DIR);
 rimraf.sync(DJS_DIR);
 
-pExec(`tsc --project "${resolve(__dirname)}"`)
+pExec(`npx tsc --project "${resolve(__dirname)}"`)
   .then(() => writeFileSync(TSCONFIG_FILE, original_tscContent));
