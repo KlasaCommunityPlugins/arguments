@@ -7,7 +7,7 @@ const rimraf = require('rimraf');
 
 const pExec = promisify(exec);
 
-rimraf.sync(`${__dirname}/dist`);
+emptyDir(`${__dirname}/dist`);
 
 const TSCONFIG_FILE = resolve(__dirname, 'tsconfig.json');
 const PACKAGE_FILE = resolve(__dirname, 'package.json');
@@ -35,8 +35,8 @@ const packageContent = ORIGINAL_PACKAGE_CONTENT
 writeFileSync(TSCONFIG_FILE, tscContent);
 writeFileSync(PACKAGE_FILE, packageContent);
 
-rimraf.sync(KLASA_DIR);
-rimraf.sync(DJS_DIR);
+emptyDir(KLASA_DIR);
+emptyDir(DJS_DIR);
 
 pExec(`npx tsc --project "${resolve(__dirname)}"`)
   .then(() => writeFileSync(TSCONFIG_FILE, original_tscContent));

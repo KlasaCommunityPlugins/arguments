@@ -41,7 +41,6 @@
     "fs-nextra": "^0.4.5",
     "klasa": "github:dirigeants/klasa#master",
     "markdownlint-cli": "^0.14.0",
-    "rimraf": "^2.6.3",
     "tslint": "^5.14.0",
     "typescript": "^3.3.3333"
   },
