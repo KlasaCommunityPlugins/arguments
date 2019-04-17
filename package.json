@@ -2,7 +2,7 @@
   "name": "@kcp/arguments",
   "version": "0.0.1",
   "description": "A plugin which adds a Tags store to allow for the easy use of TagBuilder",
-  "homepage": "https://github.com/KlasaCommunityPlugins/arguments#readme",
+  "homepage": "https://github.com/KlasaCommunityPlugins/arguments",
   "bugs": {
     "url": "https://github.com/KlasaCommunityPlugins/arguments/issues"
   },
